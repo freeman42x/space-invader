@@ -1,0 +1,51 @@
+cabal-version:      3.4
+name:               space-invader
+version:            0.1.0.0
+synopsis:           Automate becoming speaker on Twitter Spaces
+-- description:
+homepage:           https://github.com/freeman42x/space-invader
+license:            MIT
+license-file:       LICENSE
+author:             Razvan Flavius Panda
+maintainer:         razvan.panda@gmail.com
+-- copyright:
+category:           Social Network Optimization
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  MyLib
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.16.4.0
+    hs-source-dirs:   lib
+    default-language: GHC2021
+
+executable space-invader
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:
+        base ^>=4.16.4.0,
+        space-invader
+
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+test-suite space-invader-test
+    import:           warnings
+    default-language: GHC2021
+    -- other-modules:
+    -- other-extensions:
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.16.4.0,
+        space-invader
